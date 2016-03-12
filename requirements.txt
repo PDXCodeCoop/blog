@@ -9,8 +9,8 @@ django-responsive
 
 python-memcached
 libsass
-django-compressor
 django-sass-processor
 django-ckeditor
 django-markdown
 python-social-auth
+
