@@ -9,31 +9,29 @@
 {% endblock %}
 
 {% block content %}
-{% if posts|length > 1 %}
 <div class="container">
 	<div class="blog-header">
 		<h1 class="blog-title text-center">The Code Coop Blog</h1>
 		<p class="lead blog-description text-center">Where we gather, plan, and scheme</p>
-  	</div>
+  </div>
 </div>
-{% endif %}
 <div class="row">
 	<div class="container">
 		<div class="blog-main col-md-offset-1 col-md-8 col-lg-10">
 			{% if posts %}
-			{%for post in posts %}
-				<div class="blog-post">
-					<a href = "/blog/view/{{ post.slug }}">
-						<h2 class="blog-post-title">{{ post.title }}</h2>
-					</a>
-					<p class="blog-post-meta"> {{ post.posted }} by <a href="/profile/neurobomber">{{ post.author.username|title }}</a></p>
-					<p class="blog-post-meta"> <a href = "/blog/category/{{ post.category }}">{{ post.category }}</a></p>
-					<div class ="blog-content">
-						<!-- /.blog-post -->
-						{{ post.body|markdownify|safe }}
+				{% for post in posts %}
+					<div class="blog-post">
+						<a href = "/blog/view/{{ post.slug }}">
+							<h2 class="blog-post-title">{{ post.title }}</h2>
+						</a>
+						<p class="blog-post-meta"> {{ post.posted }} by <a href="/profile/neurobomber">{{ post.author.username|title }}</a></p>
+						<p class="blog-post-meta"> <a href = "/blog/category/{{ post.category }}">{{ post.category }}</a></p>
+						<div class ="blog-content">
+							<!-- /.blog-post -->
+							{{ post.body|markdownify|safe }}
+						</div>
 					</div>
-				</div>
-			{% endfor %}
+				{% endfor %}
 			{% else %}
 			<h2 class="blog-post-title">There are no blog posts</h2>
 			{% endif %}
