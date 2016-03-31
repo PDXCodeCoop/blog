@@ -19,17 +19,16 @@
 	<div class="container">
 		<div class="blog-main col-md-offset-1 col-md-8 col-lg-10">
 			{% if posts %}
-				{% for post in posts %}
-					<div class="blog-post">
-						<a href = "/blog/view/{{ post.slug }}">
-							<h2 class="blog-post-title">{{ post.title }}</h2>
-						</a>
-						<p class="blog-post-meta"> {{ post.posted }} by <a href="/profile/neurobomber">{{ post.author.username|title }}</a></p>
-						<p class="blog-post-meta"> <a href = "/blog/category/{{ post.category }}">{{ post.category }}</a></p>
-						<div class ="blog-content">
-							<!-- /.blog-post -->
-							{{ post.body|markdownify|safe }}
-						</div>
+			{%for post in posts %}
+				<div class="blog-post">
+					<a href = "/blog/view/{{ post.slug }}">
+						<h2 class="blog-post-title">{{ post.title }}</h2>
+					</a>
+					<p class="blog-post-meta"> {{ post.posted }} by <a href="#">{{ post.author.username|title }}</a></p>
+					<p class="blog-post-meta"> <a href = "/blog/category/{{ post.category }}">{{ post.category }}</a></p>
+					<div class ="blog-content">
+						<!-- /.blog-post -->
+						{{ post.body|markdownify|safe }}
 					</div>
 				{% endfor %}
 			{% else %}
