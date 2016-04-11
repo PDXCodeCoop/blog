@@ -34,6 +34,9 @@
 					</div>
 				</div>
 			{% endfor %}
+				{% if posts|length == 1 and disqus %}
+					{% include 'blog/comments.html' %}
+				{% endif %}
 			{% else %}
 			<h2 class="blog-post-title">There are no blog posts</h2>
 			{% endif %}
