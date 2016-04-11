@@ -7,8 +7,7 @@ from django_markdown.widgets import MarkdownWidget
 class BlogAdminForm(forms.ModelForm):
     #Set the editor to a WYSIWYG or Markdown
     #NOTE: Be sure to edit the template to reflect a change.
-    #body = forms.CharField(widget=CKEditorWidget())
-    body = forms.CharField(widget=MarkdownWidget())
+    body = forms.CharField(widget=CKEditorWidget())
     class Meta:
         model = Blog
         fields = '__all__'
