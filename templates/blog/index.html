@@ -9,10 +9,15 @@
 {% endblock %}
 
 {% block content %}
-{% include 'blog/header.html' %}
+{% if posts.length > 1 %}
+	{% include 'blog/header.html' %}
+{% endif %}
 <div class="row">
 	<div class="container">
 		<div class="blog-main col-md-offset-1 col-md-8 col-lg-10">
+			{% if request.user.is_superuser or request.user.is_staff %}
+				<a href="/admin/blog/blog/add/">Write Post</a>
+			{% endif %}
 			{% if posts %}
 			{%for post in posts %}
 				<div class="blog-post">
@@ -23,7 +28,7 @@
 					<p class="blog-post-meta"> <a href = "/blog/category/{{ post.category }}">{{ post.category }}</a></p>
 					<div class ="blog-content">
 						<!-- /.blog-post -->
-						{{ post.body|markdownify|safe }}
+						{{ post.body|safe }}
 					</div>
 				</div>
 			{% endfor %}
