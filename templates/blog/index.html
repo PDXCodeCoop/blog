@@ -31,10 +31,11 @@
 						{{ post.body|safe }}
 					</div>
 				</div>
-			{% endfor %}
-				{% if posts|length == 1 and disqus %}
+				{% if posts|length == 1 and disqus and post.comments %}
 					{% include 'blog/comments.html' %}
 				{% endif %}
+			{% endfor %}
+
 			{% else %}
 			<h2 class="blog-post-title">There are no blog posts</h2>
 			{% endif %}
