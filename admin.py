@@ -1,14 +1,15 @@
 from django.contrib import admin
 from blog.models import Blog, Category
 from django import forms
-from ckeditor.widgets import CKEditorWidget
-from django_markdown.widgets import MarkdownWidget
+#from ckeditor.widgets import CKEditorWidget
+#from django_markdown.widgets import MarkdownWidget
 
 class BlogAdminForm(forms.ModelForm):
     #Set the editor to a WYSIWYG or Markdown
     #NOTE: Be sure to edit the template to reflect a change.
     #body = forms.CharField(widget=CKEditorWidget())
-    body = forms.CharField(widget=MarkdownWidget())
+    #body = forms.CharField(widget=MarkdownWidget())
+    body = forms.CharField(widget=forms.Textarea)
     class Meta:
         model = Blog
         fields = '__all__'

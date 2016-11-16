@@ -3,7 +3,7 @@ from django.db.models import permalink
 from django.contrib.auth.models import User
 
 #Markdown
-from django_markdown.models import MarkdownField
+#from django_markdown.models import MarkdownField
 # Create your models here.
 
 class Blog(models.Model):
@@ -14,7 +14,7 @@ class Blog(models.Model):
     posted = models.DateTimeField(db_index=True, auto_now_add=True)
     category = models.ForeignKey('blog.Category', null=True, blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return '%s' % self.title
 
     @permalink
@@ -25,7 +25,7 @@ class Category(models.Model):
     title = models.CharField(max_length=100, db_index=True)
     slug = models.SlugField(max_length=100, db_index=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return '%s' % self.title
 
     @permalink

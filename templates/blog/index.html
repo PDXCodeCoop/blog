@@ -1,7 +1,6 @@
 {% extends "base/base.html" %}
 {% load staticfiles %}
 {% load add_class %}
-{% load markdownify %}
 {% block title %}Template Blog{% endblock %}
 {% block head %}
 	{{ block.super }}
@@ -30,7 +29,7 @@
 					<p class="blog-post-meta"> <a href = "/blog/category/{{ post.category }}">{{ post.category }}</a></p>
 					<div class ="blog-content">
 						<!-- /.blog-post -->
-						{{ post.body|markdownify|safe }}
+						{{ post.body }}
 					</div>
 				</div>
 			{% endfor %}

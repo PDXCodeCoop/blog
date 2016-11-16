@@ -1,16 +1,8 @@
 django
 easy-thumbnails
-djangorestframework
-django-tagging
-django-filter
-django-pygments
-mysql-python
-django-responsive
 
-python-memcached
-libsass
-django-sass-processor
-django-ckeditor
-django-markdown
-python-social-auth
-
+#Django Rest Framework
+#djangorestframework
+#django-tagging
+#django-filter
+#django-pygments
